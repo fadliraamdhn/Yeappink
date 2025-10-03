@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yeappink</title>
-    @vite('resources/css/app.css')
-</head>
-<body>
-    <a href="{{ route('logout') }}" class="px-4 py-2 bg-gray-800 text-white rounded">
-        Logout
-    </a>
-</body>
-</html>
+@extends('layouts.layouts')
+
+@section('content')
+<div class="px-6 md:px-16 py-10">
+    <h2 class="text-4xl font-bold mb-4">Selamat datang di Yappienk!</h2>
+    <p class="text-lg text-gray-600">Yap & Yop, tempat kamu beropini.</p>
+</div>
+@endsection

@@ -77,4 +77,15 @@ class SocialAuthController extends Controller
 
         return redirect('/');
     }
+
+    public function getByEmail($email)
+    {
+        $user = User::where('email', $email)->first();
+
+        if (!$user) {
+            return redirect('/')->with('error', 'User tidak ditemukan.');
+        }
+
+        return view('partials.profile', compact('user'));
+    }
 }
