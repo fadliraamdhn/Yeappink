@@ -14,6 +14,8 @@ Route::get('/', function () {
     }
 });
 
+Route::get('/{email}', [SocialAuthController::class, 'getByEmail'])->name('profile');
+
 Route::get('/auth/google/register', [SocialAuthController::class, 'redirect'])->defaults('provider', 'google')->defaults('action', 'register');
 Route::get('/auth/google/login', [SocialAuthController::class, 'redirect'])->defaults('provider', 'google')->defaults('action', 'login');
 Route::get('/auth/google/callback', [SocialAuthController::class, 'callback'])->defaults('provider', 'google');
@@ -22,4 +24,4 @@ Route::get('/auth/linkedin/register', [SocialAuthController::class, 'redirect'])
 Route::get('/auth/linkedin/login', [SocialAuthController::class, 'redirect'])->defaults('provider', 'linkedin')->defaults('action', 'login');
 Route::get('/auth/linkedin/callback', [SocialAuthController::class, 'callback'])->defaults('provider', 'linkedin');
 
-Route::get('/logout', [SocialAuthController::class, 'logout'])->name('logout');
+Route::post('/logout', [SocialAuthController::class, 'logout'])->name('logout');
